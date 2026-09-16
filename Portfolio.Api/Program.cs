@@ -177,6 +177,19 @@ app.UseAuthorization();
 app.MapControllers();
 
 /*
+ * BASIC HEALTH
+ */
+
+app.MapGet(
+    "/api/health",
+    () =>
+        Results.Ok(
+            new
+            {
+                status = "healthy"
+            }));
+
+/*
  * DATABASE HEALTH
  */
 
