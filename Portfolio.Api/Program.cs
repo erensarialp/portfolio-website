@@ -37,13 +37,27 @@ builder.Services.AddScoped<
  * CORS
  */
 
+//builder.Services.AddCors(options =>
+//{
+//    options.AddPolicy("Frontend", policy =>
+//    {
+//        policy
+//            .WithOrigins(
+//                "http://localhost:5173"
+//            )
+//            .AllowAnyHeader()
+//            .AllowAnyMethod();
+//    });
+//});
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("Frontend", policy =>
     {
         policy
             .WithOrigins(
-                "http://localhost:5173"
+                "http://localhost:5173",
+                "https://portfolio-web-125d.onrender.com"
             )
             .AllowAnyHeader()
             .AllowAnyMethod();
